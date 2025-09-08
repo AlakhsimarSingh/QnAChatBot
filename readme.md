@@ -9,76 +9,107 @@ This bot loads documentation from the web, splits it into chunks, stores embeddi
 
 ## Project Structure
 
+```bash
 groq/
-
 └── app.py
-
 requirements.txt
-
 README.md
-
 Media/
-
-└── StreamliyUI.png
-
+├── StreamliyUI.png
 └── demo.mp4
-
+```
 
 ---
 
 ## Features
+
 - Uses **Groq LLMs** (`gemma2-9b-it`) for fast inference  
 - Retrieval pipeline with **FAISS Vector Store**  
-- Embeddings with **HuggingFace** (`all-MiniLM-L6-v2`)  
-- Loads documents from a website (`WebBaseLoader`)  
-- Simple Streamlit UI for chatting and inspecting retrieved docs  
+- Embeddings powered by **HuggingFace** (`all-MiniLM-L6-v2`)  
+- Loads documents from a website using `WebBaseLoader`  
+- Simple **Streamlit UI** for chatting and inspecting retrieved docs  
 
 ---
 
 ## Setup Instructions
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo/groq
-2. Create and activate virtual environment
-bash
-Copy code
-python -m venv venv
-# On Windows
-venv\Scripts\activate
-# On macOS/Linux
-source venv/bin/activate
-3. Install dependencies
-bash
-Copy code
-pip install -r requirements.txt
-4. Set up environment variables
-Create a .env file in the root directory (groq/) and add your Groq API key:
+```
 
-env
-Copy code
+---
+
+### 2. Create and activate a virtual environment
+
+**For Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**For macOS/Linux:**
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Set up environment variables
+
+Create a `.env` file inside the `groq/` directory and add your **Groq API key**:
+
+```bash
 GROQ_API_KEY=your_groq_api_key_here
-▶ Running the App
-bash
-Copy code
+```
+
+---
+
+### 5. Run the app
+
+```bash
 streamlit run app.py
-This will start a local Streamlit server. Open the URL (usually http://localhost:8501) in your browser.
+```
+
+After running the above command, open the URL shown in the terminal (usually **http://localhost:8501**) in your browser.
+
+---
 
 ## Usage
-Enter your query in the text box (e.g., "What is LangSmith?")
 
-The chatbot retrieves relevant documentation chunks from FAISS
+1. Enter your query in the input box (e.g., *"What is LangSmith?"*).  
+2. The chatbot retrieves relevant documentation chunks from **FAISS**.  
+3. Groq’s LLM (`gemma2-9b-it`) generates a **context-aware** response.  
+4. Expand the **Documents similarity search** section to inspect retrieved sources.  
 
-Groq’s LLM (gemma2-9b-it) generates a context-aware response
+---
 
-Expand the Documents similarity search section to view retrieved sources
+## Demo
 
-📦 Requirements
-Your requirements.txt should contain:
+Here’s a short demo of the app in action:  
 
-txt
-Copy code
+[![Watch Demo](./Media/StreamliyUI.png)](./Media/demo.mp4)
+
+> Click the screenshot above to view the **demo video**.
+
+---
+
+## Requirements
+
+Your `requirements.txt` should include the following:
+
+```txt
 langchain
 langchain-community
 langchain-core
@@ -88,18 +119,21 @@ sentence-transformers
 streamlit
 python-dotenv
 groq
-⚠️ Notes
-Default documents are loaded from LangSmith Docs.
+```
 
-You can modify WebBaseLoader in app.py to load any website or local files.
+---
 
-Switch embeddings (HuggingFace / Ollama) by uncommenting lines in app.py.
+## Notes
+
+- By default, the bot loads documents from **LangSmith Docs**.
+- To load custom documents, modify the **`WebBaseLoader`** section in `app.py`.
+- You can also switch embeddings (e.g., HuggingFace, Ollama) by updating the embeddings configuration in `app.py`.
+
+---
 
 ## Acknowledgements
-LangChain
 
-Groq
-
-HuggingFace Sentence Transformers
-
-Streamlit
+- [LangChain](https://www.langchain.com/)  
+- [Groq](https://groq.com/)  
+- [HuggingFace Sentence Transformers](https://www.sbert.net/)  
+- [Streamlit](https://streamlit.io/)
