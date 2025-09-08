@@ -1,4 +1,6 @@
-# 🚀 ChatGroq RAG Bot
+# ChatGroq RAG Bot
+
+![App Screenshot](./Media/StreamliyUI.png)
 
 A Retrieval-Augmented Generation (RAG) chatbot built with **LangChain**, **Groq LLMs**, **FAISS**, and **Streamlit**.  
 This bot loads documentation from the web, splits it into chunks, stores embeddings in FAISS, and answers user queries using **Groq’s `gemma2-9b-it` model**.
@@ -6,8 +8,9 @@ This bot loads documentation from the web, splits it into chunks, stores embeddi
 ---
 
 ## Project Structure
-groq/ # Source code
-└── app.py # Main Streamlit app
+
+groq/
+└── app.py
 .gitignore
 README.md
 requirements.txt
@@ -18,7 +21,7 @@ Copy code
 ---
 
 ## Features
-- ✅ Uses **Groq LLMs** (`gemma2-9b-it`) for fast inference  
+- Uses **Groq LLMs** (`gemma2-9b-it`) for fast inference  
 - ✅ Retrieval pipeline with **FAISS Vector Store**  
 - ✅ Embeddings with **HuggingFace** (`all-MiniLM-L6-v2`)  
 - ✅ Loads documents from a website (`WebBaseLoader`)  
