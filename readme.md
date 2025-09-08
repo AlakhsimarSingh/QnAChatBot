@@ -10,13 +10,17 @@ This bot loads documentation from the web, splits it into chunks, stores embeddi
 ## Project Structure
 
 groq/
+
 └── app.py
 
 requirements.txt
 
 README.md
+
 Media/
+
 └── StreamliyUI.png
+
 └── demo.mp4
 
 
