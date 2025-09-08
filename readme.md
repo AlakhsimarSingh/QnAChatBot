@@ -10,22 +10,23 @@ This bot loads documentation from the web, splits it into chunks, stores embeddi
 ## Project Structure
 
 groq/
-└── app.py
-.gitignore
-README.md
-requirements.txt
+├── app.py
+├── .env.example
+├── requirements.txt
+├── README.md
+└── Media/
+    └── StreamliyUI.png
+    └── demo.mp4
 
-yaml
-Copy code
 
 ---
 
 ## Features
 - Uses **Groq LLMs** (`gemma2-9b-it`) for fast inference  
-- ✅ Retrieval pipeline with **FAISS Vector Store**  
-- ✅ Embeddings with **HuggingFace** (`all-MiniLM-L6-v2`)  
-- ✅ Loads documents from a website (`WebBaseLoader`)  
-- ✅ Simple Streamlit UI for chatting and inspecting retrieved docs  
+- Retrieval pipeline with **FAISS Vector Store**  
+- Embeddings with **HuggingFace** (`all-MiniLM-L6-v2`)  
+- Loads documents from a website (`WebBaseLoader`)  
+- Simple Streamlit UI for chatting and inspecting retrieved docs  
 
 ---
 
